@@ -9,11 +9,16 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import TextInput from "@/components/form/TextInput";
 import PasswordInput from "@/components/form/PasswordInput";
 import {ROUTES} from "@/constants/routes";
+import {loginUser} from "@/lib/auth";
+import {useRouter} from "next/navigation"
 
 export function LoginForm({
                               className,
                               ...props
                           }: React.ComponentPropsWithoutRef<"form">) {
+
+    const router = useRouter();
+
     const form = useForm<LoginFormTypeDTO>({
         resolver: zodResolver(LoginFormType),
         defaultValues: {
@@ -23,8 +28,16 @@ export function LoginForm({
     });
 
     function onSubmit(values: LoginFormTypeDTO) {
-        console.log(values);
-        // Handle login logic
+        loginUser(values).then(
+            (data) => {
+                if (data.success) {
+                    console.log(data);
+                    router.push(ROUTES.dashboard.root);
+                }
+            }
+        ).catch((error) => {
+            console.log(error);
+        });
     }
 
     return (

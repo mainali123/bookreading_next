@@ -5,7 +5,7 @@ import axios from "axios";
 import {LoginFormTypeDTO, loginRes} from "@/types/login";
 import {toast} from "sonner";
 import {RegisterFormTypeDTO} from "@/types/register";
-import { useAuthStore } from '@/store/auth-store';
+import {useAuthStore} from '@/store/auth-store';
 
 export const api = axios.create({
     baseURL: environment.API_URL,
@@ -48,10 +48,8 @@ api.interceptors.request.use(function (config) {
 });
 
 const saveAuthData = (data: loginRes) => {
-    // Use Zustand store instead of sessionStorage
     useAuthStore.getState().setAuth(data);
 
-    // Set token in axios default headers
     api.defaults.headers.common['Authorization'] = `${data.tokenType || 'Bearer'} ${data.token}`;
 }
 
@@ -65,7 +63,7 @@ export const getCurrentUser = () => {
 
 export async function loginUser(credentials: LoginFormTypeDTO) {
     try {
-        const response = await api.post("/login", credentials);
+        const {data: response} = await api.post("/login", credentials);
 
         if (!response.data.token) {
             toast.error("Invalid credentials");
@@ -73,7 +71,7 @@ export async function loginUser(credentials: LoginFormTypeDTO) {
         }
 
         saveAuthData(response.data);
-        return { success: true };
+        return {success: true};
 
     } catch (error: unknown) {
         console.log(error);
@@ -96,7 +94,7 @@ export async function registerUser(credentials: RegisterFormTypeDTO) {
         }
 
         saveAuthData(response.data);
-        return { success: true };
+        return {success: true};
 
     } catch (error: unknown) {
         const errorMessage = axios.isAxiosError(error) && error.response?.status === 401
