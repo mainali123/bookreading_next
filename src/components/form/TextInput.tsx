@@ -21,7 +21,6 @@ const TextInput = <T extends FieldValues = FieldValues>({
                                                             className,
                                                             required = false,
                                                         }: TextInputProps<T>) => {
-    console.log(label)
     return (
         <FormField
             control={control}

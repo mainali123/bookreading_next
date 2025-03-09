@@ -3,45 +3,66 @@
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {Form} from "@/components/ui/form";
-import {LoginFormType, LoginFormTypeDTO} from "@/types/login";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import TextInput from "@/components/form/TextInput";
 import PasswordInput from "@/components/form/PasswordInput";
+import {RegisterFormType, RegisterFormTypeDTO} from "@/types/register";
 import {ROUTES} from "@/constants/routes";
+import {registerUser} from "@/lib/auth";
 
-export function LoginForm({
-                              className,
-                              ...props
-                          }: React.ComponentPropsWithoutRef<"form">) {
-    const form = useForm<LoginFormTypeDTO>({
-        resolver: zodResolver(LoginFormType),
+export function RegisterForm({
+                                 className,
+                                 ...props
+                             }: React.ComponentPropsWithoutRef<"form">) {
+    const form = useForm<RegisterFormTypeDTO>({
+        resolver: zodResolver(RegisterFormType),
         defaultValues: {
+            firstName: "",
+            lastName: "",
             email: "",
-            password: ""
+            password: "",
+            confirmPassword: ""
         }
     });
 
-    function onSubmit(values: LoginFormTypeDTO) {
+    function onSubmit(values: RegisterFormTypeDTO) {
         console.log(values);
-        // Handle login logic
+        registerUser(values);
     }
 
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className={cn("flex flex-col gap-6", className)} {...props}>
                 <div className="flex flex-col items-center gap-2 text-center">
-                    <h1 className="text-2xl font-bold">Login to your account</h1>
+                    <h1 className="text-2xl font-bold">Create an account</h1>
                     <p className="text-balance text-sm text-muted-foreground">
-                        Enter your email below to login to your account
+                        Enter below details to create an account
                     </p>
                 </div>
                 <div className="grid gap-6">
+                    <div className="flex gap-3">
+                        <TextInput
+                            control={form.control}
+                            name="firstName"
+                            label="First Name"
+                            required={true}
+                        />
+
+                        <TextInput
+                            control={form.control}
+                            name="lastName"
+                            label="Last Name"
+                            required={true}
+                        />
+                    </div>
+
+
                     <TextInput
                         control={form.control}
                         name="email"
                         label="Email"
-                        placeholder="m@example.com"
+                        placeholder="john@doe.com"
                         type="email"
                         required={true}
                     />
@@ -51,6 +72,13 @@ export function LoginForm({
                             control={form.control}
                             name="password"
                             label="Password"
+                            type="password"
+                            required={true}
+                        />
+                        <PasswordInput
+                            control={form.control}
+                            name="confirmPassword"
+                            label="Confirm Password"
                             type="password"
                             required={true}
                         />
@@ -64,7 +92,7 @@ export function LoginForm({
                         </div>
                     </div>
                     <Button type="submit" className="w-full">
-                        Login
+                        Register
                     </Button>
                     <div
                         className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
@@ -84,11 +112,12 @@ export function LoginForm({
                 </div>
                 <div className="text-center text-sm">
                     Don&apos;t have an account?{" "}
-                    <a href={ROUTES.register} className="underline underline-offset-4">
-                        Sign up
+                    <a href={ROUTES.login} className="underline underline-offset-4">
+                        Login
                     </a>
                 </div>
             </form>
         </Form>
-    );
+    )
+        ;
 }
