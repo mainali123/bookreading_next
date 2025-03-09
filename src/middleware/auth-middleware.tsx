@@ -5,30 +5,39 @@ import {usePathname, useRouter} from "next/navigation";
 import {isAuthenticated} from "@/lib/auth";
 import {ROUTES} from "@/constants/routes";
 
-const PUBLIC_ROUTES = [ROUTES.root, ROUTES.login, ROUTES.register];
-const AUTH_ROUTES = [ROUTES.login, ROUTES.register];
+// const PUBLIC_ROUTES = [ROUTES.root, ROUTES.login, ROUTES.register];
+const PUBLIC_ROUTES = [ROUTES.root];
+const AUTH_ROUTES = [ROUTES.root];
+
+// const AUTH_ROUTES = [ROUTES.login, ROUTES.register];
 
 export function AuthMiddleware({children}: { children: React.ReactNode }) {
     const router = useRouter();
     const pathname = usePathname();
-    const [authenticated, setAuthenticated] = useState<boolean | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [authorized, setAuthorized] = useState(false);
 
     useEffect(() => {
-        setAuthenticated(isAuthenticated()); // Ensure this only runs on the client
-    }, []);
+        const checkAuth = async () => {
+            const authenticated = isAuthenticated();
+            const currentPath = pathname || "";
 
-    useEffect(() => {
-        if (authenticated === null || !pathname) return;
+            if (authenticated && AUTH_ROUTES.includes(currentPath)) {
+                router.replace(ROUTES.dashboard.root);
+            } else if (!authenticated && !PUBLIC_ROUTES.includes(currentPath)) {
+                router.replace(ROUTES.login);
+            } else {
+                setAuthorized(true);
+            }
 
-        if (authenticated && AUTH_ROUTES.includes(pathname)) {
-            router.replace(ROUTES.dashboard.root);
-        } else if (!authenticated && !PUBLIC_ROUTES.includes(pathname)) {
-            router.replace(ROUTES.login);
-        }
-    }, [authenticated, pathname]);
+            setLoading(false);
+        };
 
-    // Prevent rendering children until auth state is known
-    if (authenticated === null) return null;
+        checkAuth();
+    }, [pathname, router]);
+
+    // TODO: Loading spinner
+    if (loading || !authorized) return null;
 
     return <>{children}</>;
 }
