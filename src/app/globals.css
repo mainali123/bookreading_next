@@ -4,9 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+    font-family: 'CMU Serif Roman';
+    src: url('../../public/fonts/cmuserif_roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 @theme {
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+    --font-cmu-serif: 'CMU Serif Roman', serif;
+
 
     --space-0: 0px;
     --space-px: 1px;
