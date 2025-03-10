@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^4.1.2",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -69,6 +71,7 @@
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.15.1",
     "sonner": "^2.0.1",
+    "styled-components": "^6.1.15",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "timescape": "^0.7.1",

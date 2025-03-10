@@ -12,12 +12,10 @@
     font-display: swap;
 }
 
-
 @theme {
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
     --font-cmu-serif: 'CMU Serif Roman', serif;
-
 
     --space-0: 0px;
     --space-px: 1px;
@@ -54,7 +52,6 @@
     --space-72: 288px;
     --space-80: 320px;
     --space-96: 384px;
-
 
     /* Background Colors */
     --color-bg: var(--neutral-50);
@@ -202,6 +199,10 @@
 }
 
 :root {
+
+    --font-geist-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
     /*Main*/
     --primary-50: oklch(97% 0.02 240);
     --primary-100: oklch(94% 0.04 240);
@@ -293,7 +294,6 @@
 
     /*Main enc*/
 
-
     --background: var(--color-bg);
     --foreground: var(--color-text);
     --card: var(--color-bg-elevated);
@@ -330,6 +330,7 @@
 }
 
 .dark {
+    /* Main colors */
     --background: var(--neutral-900);
     --foreground: var(--neutral-50);
     --card: var(--neutral-900);
@@ -349,11 +350,15 @@
     --border: var(--neutral-800);
     --input: var(--neutral-800);
     --ring: var(--primary-500);
+
+    /* Chart colors */
     --chart-1: var(--primary-400);
     --chart-2: var(--secondary-400);
     --chart-3: var(--tertiary-400);
     --chart-4: var(--warning-400);
     --chart-5: var(--danger-400);
+
+    /* Sidebar colors */
     --sidebar: var(--neutral-800);
     --sidebar-foreground: var(--neutral-50);
     --sidebar-primary: var(--primary-400);
@@ -362,6 +367,150 @@
     --sidebar-accent-foreground: var(--neutral-50);
     --sidebar-border: var(--neutral-700);
     --sidebar-ring: var(--primary-500);
+
+    /* Background Colors */
+    --color-bg: var(--neutral-900);
+    --color-bg-subtle: var(--neutral-800);
+    --color-bg-disabled: var(--neutral-700);
+    --color-bg-strong: var(--neutral-700);
+    --color-bg-inverse: var(--neutral-50);
+    --color-bg-primary: var(--primary-600);
+    --color-bg-primary-hover: var(--primary-500);
+    --color-bg-primary-active: var(--primary-400);
+    --color-bg-secondary: var(--secondary-600);
+    --color-bg-secondary-hover: var(--secondary-500);
+    --color-bg-secondary-active: var(--secondary-400);
+    --color-bg-success: var(--success-600);
+    --color-bg-success-hover: var(--success-500);
+    --color-bg-success-active: var(--success-400);
+    --color-bg-error: var(--danger-600);
+    --color-bg-error-hover: var(--danger-500);
+    --color-bg-error-active: var(--danger-400);
+    --color-bg-warning: var(--warning-600);
+    --color-bg-warning-hover: var(--warning-500);
+    --color-bg-warning-active: var(--warning-400);
+    --color-bg-info: var(--info-600);
+    --color-bg-info-hover: var(--info-500);
+    --color-bg-info-active: var(--info-400);
+    --color-bg-interactive: var(--primary-600);
+    --color-bg-interactive-hover: var(--primary-500);
+    --color-bg-interactive-active: var(--primary-400);
+    --color-bg-elevated: var(--neutral-800);
+    --color-bg-brand: var(--primary-600);
+    --color-bg-brand-hover: var(--primary-500);
+    --color-bg-brand-active: var(--primary-400);
+
+    /* Border Colors */
+    --color-border: var(--neutral-700);
+    --color-border-hover: var(--neutral-600);
+    --color-border-disabled: var(--neutral-800);
+    --color-border-primary: var(--primary-500);
+    --color-border-success: var(--success-500);
+    --color-border-success-muted: var(--success-700);
+    --color-border-error: var(--danger-500);
+    --color-border-error-hover: var(--danger-400);
+    --color-border-error-active: var(--danger-300);
+    --color-border-warning: var(--warning-500);
+    --color-border-info: var(--info-500);
+    --color-border-interactive: var(--primary-500);
+    --color-border-interactive-hover: var(--primary-400);
+    --color-border-focusRing: var(--primary-500);
+    --color-border-onColor: var(--neutral-900);
+
+    /* Text Colors */
+    --color-text: var(--neutral-50);
+    --color-text-muted: var(--neutral-400);
+    --color-text-disabled: var(--neutral-600);
+    --color-text-placeholder: var(--neutral-500);
+    --color-text-inverse: var(--neutral-900);
+    --color-text-primary: var(--primary-300);
+    --color-text-primary-hover: var(--primary-200);
+    --color-text-success: var(--success-300);
+    --color-text-error: var(--danger-300);
+    --color-text-warning: var(--warning-300);
+    --color-text-info: var(--info-300);
+    --color-text-interactive: var(--primary-300);
+
+    /* Icon Colors */
+    --color-icon: var(--neutral-300);
+    --color-icon-muted: var(--neutral-500);
+    --color-icon-disabled: var(--neutral-600);
+    --color-icon-primary: var(--primary-400);
+    --color-icon-success: var(--success-400);
+    --color-icon-error: var(--danger-400);
+    --color-icon-warning: var(--warning-400);
+    --color-icon-info: var(--info-400);
+    --color-icon-interactive: var(--primary-400);
+
+    /* Button Colors */
+    --color-button-primary: var(--primary-600);
+    --color-button-primary-hover: var(--primary-500);
+    --color-button-primary-active: var(--primary-400);
+    --color-button-secondary: var(--neutral-700);
+    --color-button-secondary-hover: var(--neutral-600);
+    --color-button-secondary-active: var(--neutral-500);
+    --color-button-danger: var(--danger-600);
+    --color-button-danger-hover: var(--danger-500);
+    --color-button-danger-active: var(--danger-400);
+    --color-button-disabled: var(--neutral-800);
+
+    /* Link Colors */
+    --color-link: var(--primary-400);
+    --color-link-hover: var(--primary-300);
+    --color-link-active: var(--primary-200);
+    --color-link-visited: var(--tertiary-400);
+
+    /* Shadow & Overlay Colors */
+    --color-shadow: oklch(0% 0 0 / 0.3);
+    --color-shadow-hover: oklch(0% 0 0 / 0.4);
+    --color-shadow-active: oklch(0% 0 0 / 0.5);
+    --color-overlay: oklch(0% 0 0 / 0.75);
+    --color-overlay-dark: oklch(0% 0 0 / 0.9);
+    --color-overlay-light: oklch(100% 0 0 / 0.25);
+
+    /* Badge & Notification Colors */
+    --color-badge-success: var(--success-900);
+    --color-badge-error: var(--danger-900);
+    --color-badge-warning: var(--warning-900);
+    --color-badge-info: var(--info-900);
+    --color-notification-success: var(--success-500);
+    --color-notification-error: var(--danger-500);
+    --color-notification-warning: var(--warning-500);
+    --color-notification-info: var(--info-500);
+
+    /* Table Colors */
+    --color-table-header: var(--neutral-800);
+    --color-table-row: var(--neutral-900);
+    --color-table-row-hover: var(--neutral-800);
+    --color-table-row-alt: var(--neutral-800);
+    --color-table-border: var(--neutral-700);
+
+    /* Tooltip & Popover Colors */
+    --color-tooltip-bg: var(--neutral-800);
+    --color-tooltip-text: var(--neutral-50);
+    --color-tooltip-border: var(--neutral-700);
+    --color-popover-bg: var(--neutral-800);
+    --color-popover-border: var(--neutral-700);
+
+    /* Progress & Skeleton Colors */
+    --color-progress-bg: var(--neutral-700);
+    --color-progress-fill: var(--primary-500);
+    --color-progress-indeterminate: var(--primary-700);
+    --color-skeleton: var(--neutral-700);
+    --color-skeleton-shimmer: var(--neutral-800);
+
+    /* Interactive & Focus Colors */
+    --color-focus-ring: var(--primary-500);
+    --color-interactive: var(--primary-500);
+    --color-interactive-hover: var(--primary-400);
+    --color-interactive-active: var(--primary-300);
+
+    /* Code Colors */
+    --color-code-bg: var(--neutral-800);
+    --color-code-text: var(--neutral-50);
+    --color-code-keyword: var(--primary-300);
+    --color-code-string: var(--success-300);
+    --color-code-comment: var(--neutral-500);
 }
 
 @theme inline {
@@ -409,12 +558,14 @@
             height: 0;
         }
         to {
+            /* --radix-accordion-content-height is dynamically set by Radix UI */
             height: var(--radix-accordion-content-height);
         }
     }
 
     @keyframes accordion-up {
         from {
+            /* --radix-accordion-content-height is dynamically set by Radix UI */
             height: var(--radix-accordion-content-height);
         }
         to {

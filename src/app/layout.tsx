@@ -2,6 +2,8 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import {AuthMiddleware} from "@/middleware/auth-middleware";
+import {ThemeProvider} from "@/components/ui/theme-provider"
+
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -24,13 +26,20 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-        <AuthMiddleware>
-            {children}
-        </AuthMiddleware>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <AuthMiddleware>
+                {children}
+            </AuthMiddleware>
+        </ThemeProvider>
         </body>
         </html>
     );
