@@ -583,3 +583,97 @@
         @apply bg-background text-foreground;
     }
 }
+
+
+/*!*Main*!*/
+/*--primary-50: oklch(97% 0.02 30);*/
+/*--primary-100: oklch(94% 0.04 30);*/
+/*--primary-200: oklch(88% 0.07 30);*/
+/*--primary-300: oklch(80% 0.1 30);*/
+/*--primary-400: oklch(72% 0.12 30);  !* Base Burnt Orange *!*/
+/*--primary-500: oklch(65% 0.15 30);  !* #D84315 equivalent *!*/
+/*--primary-600: oklch(55% 0.15 30);*/
+/*--primary-700: oklch(45% 0.13 30);*/
+/*--primary-800: oklch(35% 0.1 30);*/
+/*--primary-900: oklch(25% 0.08 30);*/
+
+/*!* Secondary (Olive Green) *!*/
+/*--secondary-50: oklch(97% 0.02 110);*/
+/*--secondary-100: oklch(94% 0.04 110);*/
+/*--secondary-200: oklch(88% 0.07 110);*/
+/*--secondary-300: oklch(80% 0.1 110);*/
+/*--secondary-400: oklch(72% 0.12 110);*/
+/*--secondary-500: oklch(65% 0.15 110);  !* #4CAF50 equivalent *!*/
+/*--secondary-600: oklch(55% 0.15 110);*/
+/*--secondary-700: oklch(45% 0.13 110);*/
+/*--secondary-800: oklch(35% 0.1 110);*/
+/*--secondary-900: oklch(25% 0.08 110);*/
+
+/*!* Tertiary (Muted Gold) *!*/
+/*--tertiary-50: oklch(97% 0.02 60);*/
+/*--tertiary-100: oklch(94% 0.04 60);*/
+/*--tertiary-200: oklch(88% 0.07 60);*/
+/*--tertiary-300: oklch(80% 0.1 60);*/
+/*--tertiary-400: oklch(72% 0.12 60);*/
+/*--tertiary-500: oklch(65% 0.15 60);  !* #FFB74D equivalent *!*/
+/*--tertiary-600: oklch(55% 0.15 60);*/
+/*--tertiary-700: oklch(45% 0.13 60);*/
+/*--tertiary-800: oklch(35% 0.1 60);*/
+/*--tertiary-900: oklch(25% 0.08 60);*/
+
+/*!* Neutrals (Warm Book Pages) *!*/
+/*--neutral-50: oklch(98% 0.01 80);   !* Lightest beige *!*/
+/*--neutral-100: oklch(95% 0.02 80);*/
+/*--neutral-200: oklch(90% 0.03 80);  !* Page background *!*/
+/*--neutral-300: oklch(80% 0.04 80);  !* #F5F5DC equivalent *!*/
+/*--neutral-400: oklch(60% 0.04 80);*/
+/*--neutral-500: oklch(40% 0.05 80);  !* Dark Brown text base *!*/
+/*--neutral-600: oklch(30% 0.05 80);  !* #3E2723 equivalent *!*/
+/*--neutral-700: oklch(20% 0.05 80);*/
+/*--neutral-800: oklch(10% 0.05 80);*/
+/*--neutral-900: oklch(5% 0.05 80);*/
+
+/*!* Semantic Colors (Aligned with Book Theme) *!*/
+/*--success-50: oklch(97% 0.02 110);  !* Olive Green family *!*/
+/*--success-100: oklch(94% 0.04 110);*/
+/*--success-200: oklch(88% 0.07 110);*/
+/*--success-300: oklch(80% 0.1 110);*/
+/*--success-400: oklch(72% 0.12 110);*/
+/*--success-500: oklch(65% 0.15 110);*/
+/*--success-600: oklch(55% 0.15 110);*/
+/*--success-700: oklch(45% 0.13 110);*/
+/*--success-800: oklch(35% 0.1 110);*/
+/*--success-900: oklch(25% 0.08 110);*/
+
+/*--info-50: oklch(97% 0.02 220);    !* Soft Blue for contrast *!*/
+/*--info-100: oklch(94% 0.04 220);*/
+/*--info-200: oklch(88% 0.07 220);*/
+/*--info-300: oklch(80% 0.1 220);*/
+/*--info-400: oklch(72% 0.12 220);*/
+/*--info-500: oklch(65% 0.15 220);*/
+/*--info-600: oklch(55% 0.15 220);*/
+/*--info-700: oklch(45% 0.13 220);*/
+/*--info-800: oklch(35% 0.1 220);*/
+/*--info-900: oklch(25% 0.08 220);*/
+
+/*--warning-50: oklch(97% 0.02 60);   !* Gold family *!*/
+/*--warning-100: oklch(94% 0.04 60);*/
+/*--warning-200: oklch(88% 0.07 60);*/
+/*--warning-300: oklch(80% 0.1 60);*/
+/*--warning-400: oklch(72% 0.12 60);*/
+/*--warning-500: oklch(65% 0.15 60);*/
+/*--warning-600: oklch(55% 0.15 60);*/
+/*--warning-700: oklch(45% 0.13 60);*/
+/*--warning-800: oklch(35% 0.1 60);*/
+/*--warning-900: oklch(25% 0.08 60);*/
+
+/*--danger-50: oklch(97% 0.02 25);    !* Warm Red *!*/
+/*--danger-100: oklch(94% 0.04 25);*/
+/*--danger-200: oklch(88% 0.07 25);*/
+/*--danger-300: oklch(80% 0.1 25);*/
+/*--danger-400: oklch(72% 0.12 25);   !* #EF5350 equivalent *!*/
+/*--danger-500: oklch(65% 0.15 25);*/
+/*--danger-600: oklch(55% 0.15 25);*/
+/*--danger-700: oklch(45% 0.13 25);*/
+/*--danger-800: oklch(35% 0.1 25);*/
+/*--danger-900: oklch(25% 0.08 25);*/
